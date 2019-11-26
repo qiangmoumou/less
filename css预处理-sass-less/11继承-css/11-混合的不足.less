@@ -1,0 +1,23 @@
+@import "./混合的不足/juzhong.less";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#wrap{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+    margin: 0 auto;
+    .inner{
+        &:nth-child(1){
+            // 他们有共同的样式，却要在同样的地方调用了两次，这就是 混合的 局限性，所以由此引出了 继承
+            .juzhong(100px, 100px, pink);
+        }
+        &:nth-child(2){
+            .juzhong(50px, 50px, black);
+        }
+    }
+}

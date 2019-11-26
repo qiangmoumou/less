@@ -1,0 +1,40 @@
+
+.juzhong(@w:10px, @h:10px, @c:green){
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: @w;
+    height: @h;
+    background: @c;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+#wrap{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ddd;
+    margin: auto;
+    position: relative;
+    .inner{
+
+      .juzhong(100px, 100px, pink);
+        
+    }
+    .inner2{
+        
+        // 本来只是想 把 颜色改掉， 其他的使用默认值， 但是现在 却把 width 改成 width: black了
+//      .juzhong(black);
+        
+        // 所以要这样做    指定参数 重新赋值
+        .juzhong(@c:black);
+        
+        
+        
+    }
+}

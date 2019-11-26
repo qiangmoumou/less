@@ -1,0 +1,44 @@
+// 定义一个 三角形 的 混合
+// 把 三角形 的 颜色 朝向 大小等  自己写活，用的时候再给
+
+// 通过 一个 标识符 L 来 匹配  三角形 的 朝向
+
+// 2. 把 匹配 混合  的 重复 部分 提出来，每次 匹配到的 混合 在执行的时候，都会带上这个 提出来的部分
+//    第一个参数 必须是 @_   剩下的 形参 跟着 写入就行了     匹配混合 标识符 不用写 （L, R, T, B） 
+.triangle(@_, @w, @c){
+    width: 0px;
+    height: 0px;
+}
+
+// 1. 因为混合 有部分是 重复的 内容， 所以把这部分重复的内容 提出来
+.triangle(L, @w, @c){
+//  width: 0px;
+//  height: 0px;
+    border-width: @w;
+    border-style: solid;
+    border-color: transparent @c transparent transparent;
+}
+
+.triangle(R, @w, @c){
+//  width: 0px;
+//  height: 0px;
+    border-width: @w;
+    border-style: solid;
+    border-color: transparent transparent transparent @c;
+}
+
+.triangle(T, @w, @c){
+//  width: 0px;
+//  height: 0px;
+    border-width: @w;
+    border-style: solid;
+    border-color: transparent transparent @c transparent;
+}
+
+.triangle(B, @w, @c){
+//  width: 0px;
+//  height: 0px;
+    border-width: @w;
+    border-style: solid;
+    border-color: @c transparent transparent transparent;
+}

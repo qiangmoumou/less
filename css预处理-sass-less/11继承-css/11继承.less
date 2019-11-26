@@ -1,0 +1,30 @@
+@import "./继承的优势/juzhong.less";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#wrap{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+    margin: 0 auto;
+    // :extend 是一个 函数  里面跟 一个 继承， 解决了 inner(1),inner(2)他们共同的样式问题
+    // 把公共 代码 都放在了 .juzhong 这个 类 里面，  但是 这样的 方式 不够 灵活
+//  .inner:extend(.juzhong){
+    .inner{            // 写上这个 all 就会把 所有 关于 .juzhong 的状态都继承下来 
+        &:extend(.juzhong all);   // 把extend() 以同级的 方式 写在 这也可以，而且 更加 的 干净
+        &:nth-child(1){
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+        &:nth-child(2){
+            width: 50px;
+            height: 50px;
+            background: yellow;
+        }
+    }
+}

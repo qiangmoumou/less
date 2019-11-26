@@ -1,0 +1,49 @@
+// 因为 inner和inner2 的样式都一样， 重复写耦合度太高了，
+// 1. 所以我们需要 定义 一个 "混合", .juzhong{} 会编译到 css里面去，使原生css很大
+// 2. 定义的时候加上 括号（不带参数的混合）  .juzhong(){} 就不会编译到 css 里面， 该混合依然有效
+// 3. 还能弄 带参数的 混合 .juzhong(@w, @h, @c) {}
+// 4. 带参数并且有默认值的混合
+.juzhong(@w:10px, @h:10px, @c:green){
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: @w;
+    height: @h;
+    background: @c;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+#wrap{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ddd;
+    margin: auto;
+    position: relative;
+    .inner{
+        
+        // 1. 在 这里 直接 用 定义好的 混合 .juzhong; 就行
+//      .juzhong;
+
+        // 2. 不带参数的混合
+//      .juzhong();
+
+        // 3. 用 传了 参数 的 混合 
+//      .juzhong(100px, 100px, pink);
+        
+        // 4.有参数，但是有默认值的 混合
+        .juzhong;
+        
+        
+        
+        z-index: 9;
+    }
+    .inner2{
+        .juzhong(200px, 200px, deeppink);
+    }
+}

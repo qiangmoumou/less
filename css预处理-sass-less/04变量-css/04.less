@@ -1,0 +1,31 @@
+// 定义 属性值 变量
+@color: pink;
+// 定义 属性名 变量
+@m: margin;
+// 定义 选择器 变量
+@selector: #wrap;
+*{
+    // 属性名 的 变量是 这么写的  @{obj}
+    @{m}: 0;
+    padding: 0;
+}
+// 选择器 的 变量是 这么写的  @{obj}
+@{selector}{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ddd;
+    margin: auto;
+    position: relative;
+    .inner{
+        width: 100px;
+        height: 100px;
+        // 属性值的 变量， 在这里 直接 写就行啦 @color
+        background: @color;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}

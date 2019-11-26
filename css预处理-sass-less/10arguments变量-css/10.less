@@ -1,0 +1,6 @@
+.border(@1, @2, @3){
+    border: @arguments;     // 这里直接取代了上面的 形参了  不用，把形参拿过来，再写了
+}
+#wrap .sjx{
+    .border(1px,solid,red)  // 但是这里 用的时候 还是得 按照 实参 对应 形参 的方式 去用 
+}

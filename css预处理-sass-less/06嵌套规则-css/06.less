@@ -1,0 +1,29 @@
+@color: pink;
+*{
+    margin: 0;
+    padding: 0;
+}
+// 父级
+#wrap{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ddd;
+    margin: auto;
+    position: relative;
+    // 子级
+    .inner{
+        width: 100px;
+        height: 100px;
+        background: @color;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        // & 同级
+        &:hover{
+            background: red;
+        }
+    }
+}

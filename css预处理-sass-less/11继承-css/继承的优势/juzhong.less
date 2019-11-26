@@ -1,0 +1,14 @@
+// 继承没有 参数，因此没有 混合灵活  继承 直接写 class 
+.juzhong{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+// 想把 关于 .juzhong 的所有 相关的 状态 都 继承 下来，都要 用到的话， 在调用处 加上 all, 这条就也会被继承调用
+.juzhong:hover{
+    background: red !important;  // 得加上 权重， 因为这个 在 外面 调用的 时候 是 在上方的 ， 下方有:nth-child，所以要加上权重，以防下面的 :nth-child 给覆盖
+}

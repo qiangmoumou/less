@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!-- 2. 这里得告诉浏览器 要用 less-->
+		<style type="text/less">
+			
+			#wrap{
+				width: 300px;
+				height: 300px;
+				border: 1px solid #ddd;
+				margin: auto;
+				position: relative;
+				.inner{
+					width: 100px;
+					height: 100px;
+					background: #333;
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+				}
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="wrap">
+			<div class="inner">
+				
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+	</body>
+	<!--这种方法是 运行时 编译， 我要要的是 预编译， 所以不用这种方式-->
+	<!-- 1. 因为 less 要编译 css ， 所以要把 less写到 css的下面-->
+	<script type="text/javascript" src="js/less.min.js" ></script>
+	
+</html>
